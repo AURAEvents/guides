@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fenster &amp; T&uuml;ren rund um Drabenderh&ouml;he — Top 50 Anbieter</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #ffffff;
+            color: #1e293b;
+            line-height: 1.7;
+            padding: 0 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 0 100px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .header .badge {
+            display: inline-block;
+            background: rgba(22, 163, 74, 0.1);
+            color: #16a34a;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 6px 16px;
+            border-radius: 100px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            font-size: 17px;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Tab navigation */
+        .tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 32px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0;
+        }
+
+        .tab {
+            padding: 12px 24px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #64748b;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+            background: none;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            font-family: inherit;
+        }
+
+        .tab:hover { color: #16a34a; }
+
+        .tab.active {
+            color: #16a34a;
+            border-bottom-color: #16a34a;
+        }
+
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        /* Section headers */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+            margin-top: 36px;
+        }
+
+        .section-header:first-child { margin-top: 0; }
+
+        .section-icon {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        .section-subtitle {
+            font-size: 13px;
+            color: #94a3b8;
+            margin-left: auto;
+        }
+
+        /* Cards */
+        .card {
+            background: #f8faf8;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 20px 24px;
+            margin-bottom: 12px;
+            display: grid;
+            grid-template-columns: 40px 1fr auto;
+            gap: 16px;
+            align-items: start;
+            transition: border-color 0.2s;
+        }
+
+        .card:hover {
+            border-color: #86efac;
+        }
+
+        .rank {
+            width: 36px;
+            height: 36px;
+            background: #fff;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        .rank.top { border-color: #22c55e; color: #16a34a; background: rgba(22,163,74,0.05); }
+
+        .card-body h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 4px;
+        }
+
+        .card-body h3 a {
+            color: #0f172a;
+            text-decoration: none;
+        }
+
+        .card-body h3 a:hover {
+            color: #16a34a;
+        }
+
+        .card-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 13px;
+            color: #64748b;
+            margin-bottom: 6px;
+        }
+
+        .card-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .card-services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 6px;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 6px;
+            background: rgba(22, 163, 74, 0.07);
+            color: #16a34a;
+        }
+
+        .tag.blue { background: rgba(59,130,246,0.07); color: #3b82f6; }
+        .tag.amber { background: rgba(245,158,11,0.07); color: #d97706; }
+
+        .card-distance {
+            font-size: 13px;
+            font-weight: 600;
+            color: #94a3b8;
+            white-space: nowrap;
+            text-align: right;
+        }
+
+        .card-distance strong {
+            display: block;
+            font-size: 18px;
+            color: #16a34a;
+        }
+
+        /* Info box */
+        .info-box {
+            background: rgba(22, 163, 74, 0.04);
+            border-left: 3px solid #22c55e;
+            border-radius: 0 10px 10px 0;
+            padding: 16px 20px;
+            margin-bottom: 32px;
+        }
+
+        .info-box p {
+            font-size: 14px;
+            color: #475569;
+        }
+
+        .info-box strong { color: #0f172a; }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .card {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+            .rank { display: none; }
+            .card-distance { text-align: left; }
+            .card-distance strong { display: inline; font-size: 14px; }
+            .header h1 { font-size: 26px; }
+            .tabs { overflow-x: auto; }
+        }
+
+        /* Links */
+        a { color: #16a34a; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        .divider {
+            height: 1px;
+            background: #e2e8f0;
+            margin: 40px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="header">
+            <div class="badge">Lieferanten&uuml;bersicht</div>
+            <h1>Fenster &amp; T&uuml;ren rund um Drabenderh&ouml;he</h1>
+            <p>50 Anbieter f&uuml;r Fenster, Haust&uuml;ren und T&uuml;ren im Oberbergischen Kreis und Umgebung &mdash; sortiert nach Entfernung und Leistung.</p>
+        </div>
+
+        <div class="info-box">
+            <p><strong>Sortierung:</strong> Ranking basiert auf N&auml;he zu Drabenderh&ouml;he, Spezialisierung und Leistungsumfang. Entfernungen sind Sch&auml;tzwerte (Luftlinie). Alle Angaben ohne Gew&auml;hr &mdash; Stand Juni 2026.</p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('all')">Alle (50)</button>
+            <button class="tab" onclick="showTab('fenster')">Fenster</button>
+            <button class="tab" onclick="showTab('tueren')">T&uuml;ren</button>
+            <button class="tab" onclick="showTab('both')">Beides</button>
+        </div>
+
+        <!-- ALL TAB -->
+        <div id="tab-all" class="tab-content active">
+
+            <div class="section-header">
+                <div class="section-icon">A</div>
+                <h2>Direktumgebung (0–10 km)</h2>
+                <span class="section-subtitle">Wiehl &amp; Nachbargemeinden</span>
+            </div>
+
+            <!-- 1 -->
+            <div class="card" data-type="both">
+                <div class="rank top">1</div>
+                <div class="card-body">
+                    <h3><a href="https://www.loettgen-und-roesser.de" target="_blank">L&ouml;ttgen &amp; R&ouml;&szlig;er Fenstertechnik GmbH</a></h3>
+                    <div class="card-meta">
+                        <span>Vor den Birken 8, 51674 Wiehl</span>
+                        <span>02261 / 78680</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Fenster</span>
+                        <span class="tag">T&uuml;ren</span>
+                        <span class="tag">Winterg&auml;rten</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~2 km</strong>Wiehl</div>
+            </div>
+
+            <!-- 2 -->
+            <div class="card" data-type="both">
+                <div class="rank top">2</div>
+                <div class="card-body">
+                    <h3><a href="https://ic-westermeier.de" target="_blank">Ideencenter Westermeier GmbH</a></h3>
+                    <div class="card-meta">
+                        <span>An der H&ouml;he 4, 51674 Wiehl-Marienhagen</span>
+                        <span>02261 / 750 85</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Fenster</span>
+                        <span class="tag">Haust&uuml;ren</span>
+                        <span class="tag">Rolll&auml;den</span>
+                        <span class="tag">Smart Home</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~3 km</strong>Wiehl-Marienhagen</div>
+            </div>
+
+            <!-- 3 -->
+            <div class="card" data-type="fenster">
+                <div class="rank top">3</div>
+                <div class="card-body">
+                    <h3><a href="https://www.linder-rolf.de" target="_blank">Linder-Rolf Fenster GmbH</a></h3>
+                    <div class="card-meta">
+                        <span>Oststra&szlig;e 38, 51674 Wiehl</span>
+                        <span>02261 / 790853</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Fenster</span>
+                        <span class="tag">Kunststofffenster</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~3 km</strong>Wiehl</div>
+            </div>
+
+            <!-- 4 -->
+            <div class="card" data-type="both">
+                <div class="rank top">4</div>
+                <div class="card-body">
+                    <h3><a href="https://www.schreiner-tischler.de/wiehl/tischlerei-bernd-kloppenburg" target="_blank">Tischlerei Bernd Kloppenburg</a></h3>
+                    <div class="card-meta">
+                        <span>D&ouml;rnerstr. 31, 51674 Wiehl</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Fenster</span>
+                        <span class="tag">T&uuml;ren</span>
+                        <span class="tag">M&ouml;bel</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~3 km</strong>Wiehl</div>
+            </div>
+
+            <!-- 5 -->
+            <div class="card" data-type="both">
+                <div class="rank top">5</div>
+                <div class="card-body">
+                    <h3><a href="https://www.tischlerei-renner.de" target="_blank">Tischlerei Renner GmbH</a></h3>
+                    <div class="card-meta">
+                        <span>Gewerbeparkstr. 22, 51580 Reichshof-Wehnrath</span>
+                        <span>02265 / 990257</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Fenster</span>
+                        <span class="tag">T&uuml;ren</span>
+                        <span class="tag">PaX-Partner</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~8 km</strong>Reichshof</div>
+            </div>
+
+            <div class="section-header">
+                <div class="section-icon">B</div>
+                <h2>Nahbereich (10–20 km)</h2>
+                <span class="section-subtitle">Gummersbach, N&uuml;mbrecht, Bergneustadt</span>
+            </div>
+
+            <!-- 6 -->
+            <div class="card" data-type="both">
+                <div class="rank top">6</div>
+                <div class="card-body">
+                    <h3><a href="https://www.lehr-bausysteme.de" target="_blank">Bausysteme Johann Lehr</a></h3>
+                    <div class="card-meta">
+                        <span>Gummersbach</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Fenster</span>
+                        <span class="tag">Haust&uuml;ren</span>
+                        <span class="tag">Garagentore</span>
+                        <span class="tag">Sonnenschutz</span>
+                        <span class="tag">Bodenbelag</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~12 km</strong>Gummersbach</div>
+            </div>
+
+            <!-- 7 -->
+            <div class="card" data-type="both">
+                <div class="rank top">7</div>
+                <div class="card-body">
+                    <h3><a href="https://dick-bauelemente.de" target="_blank">Dick Bauelemente</a></h3>
+                    <div class="card-meta">
+                        <span>Arndtstra&szlig;e 8, 51645 Gummersbach</span>
+                        <span>0175 / 7020612</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Haust&uuml;ren</span>
+                        <span class="tag">Fenster</span>
+                        <span class="tag">Garagentore</span>
+                        <span class="tag">Insektenschutz</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~12 km</strong>Gummersbach</div>
+            </div>
+
+            <!-- 8 -->
+            <div class="card" data-type="both">
+                <div class="rank">8</div>
+                <div class="card-body">
+                    <h3><a href="https://www.oberberg-aktuell.de/lokalmix/christian-dannenberg---t--ren---fenster---terrassendaecher-a-92372" target="_blank">Christian Dannenberg</a></h3>
+                    <div class="card-meta">
+                        <span>Gummersbach-Windhagen</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">T&uuml;ren</span>
+                        <span class="tag">Fenster</span>
+                        <span class="tag">Terrassend&auml;cher</span>
+                        <span class="tag">Spezialglas</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~13 km</strong>Gummersbach</div>
+            </div>
+
+            <!-- 9 -->
+            <div class="card" data-type="fenster">
+                <div class="rank">9</div>
+                <div class="card-body">
+                    <h3><a href="https://www.gelbeseiten.de/gsbiz/60cc404b-4fd5-48c7-bdce-81f6242ae900" target="_blank">Michalsky Fenster (KuFeBa)</a></h3>
+                    <div class="card-meta">
+                        <span>Beckestr. 10, 51643 Gummersbach-Strombach</span>
+                        <span>02269 / 311</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Fenster</span>
+                        <span class="tag">Fensterbau</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~14 km</strong>Gummersbach</div>
+            </div>
+
+            <!-- 10 -->
+            <div class="card" data-type="both">
+                <div class="rank">10</div>
+                <div class="card-body">
+                    <h3><a href="https://www.tischlereibetrieb-bauer.de" target="_blank">Tischlerei Christoph Bauer</a></h3>
+                    <div class="card-meta">
+                        <span>Hardtwiesenstra&szlig;e 24a, 51643 Gummersbach</span>
+                        <span>02261 / 9795351</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Fenster</span>
+                        <span class="tag">T&uuml;ren</span>
+                        <span class="tag">M&ouml;bel</span>
+                        <span class="tag">Carports</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~14 km</strong>Gummersbach</div>
+            </div>
+
+            <!-- 11 -->
+            <div class="card" data-type="both">
+                <div class="rank">11</div>
+                <div class="card-body">
+                    <h3><a href="https://www.ihr-fachhandwerker-oberberg.de" target="_blank">Patrick Altjohann &mdash; Fachhandwerker Oberberg</a></h3>
+                    <div class="card-meta">
+                        <span>Wervershoofer Str. 32a, 51647 Gummersbach</span>
+                        <span>02261 / 912 73 00</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Fenster</span>
+                        <span class="tag">T&uuml;ren</span>
+                        <span class="tag">PaX-Partner</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~14 km</strong>Gummersbach</div>
+            </div>
+
+            <!-- 12 -->
+            <div class="card" data-type="both">
+                <div class="rank">12</div>
+                <div class="card-body">
+                    <h3><a href="https://www.glasundschatten.de" target="_blank">Glas und Schatten</a></h3>
+                    <div class="card-meta">
+                        <span>D&ouml;rspestr. 3a, 51702 Bergneustadt</span>
+                        <span>02261 / 9699870</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Fenster</span>
+                        <span class="tag">&Uuml;berdachungen</span>
+                        <span class="tag">Winterg&auml;rten</span>
+                        <span class="tag">Sonnenschutz</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~15 km</strong>Bergneustadt</div>
+            </div>
+
+            <!-- 13 -->
+            <div class="card" data-type="both">
+                <div class="rank">13</div>
+                <div class="card-body">
+                    <h3><a href="https://fentobau.de" target="_blank">Fentobau</a></h3>
+                    <div class="card-meta">
+                        <span>Bergneustadt</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Kunststofffenster</span>
+                        <span class="tag">Alufenster</span>
+                        <span class="tag">T&uuml;ren</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~15 km</strong>Bergneustadt</div>
+            </div>
+
+            <!-- 14 -->
+            <div class="card" data-type="both">
+                <div class="rank">14</div>
+                <div class="card-body">
+                    <h3>Block Exklusiv Produkte</h3>
+                    <div class="card-meta">
+                        <span>Sonnenweg 8, 51588 N&uuml;mbrecht</span>
+                        <span>02293 / 9098650</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Fenster</span>
+                        <span class="tag">T&uuml;ren</span>
+                        <span class="tag">Insektenschutz</span>
+                        <span class="tag">Rolll&auml;den</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~10 km</strong>N&uuml;mbrecht</div>
+            </div>
+
+            <!-- 15 -->
+            <div class="card" data-type="both">
+                <div class="rank">15</div>
+                <div class="card-body">
+                    <h3>Fensterbauer N&uuml;mbrecht (Elsenroth)</h3>
+                    <div class="card-meta">
+                        <span>Fichtenweg 2A, 51588 N&uuml;mbrecht</span>
+                        <span>02293 / 37 23</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Fenster</span>
+                        <span class="tag">T&uuml;ren</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~10 km</strong>N&uuml;mbrecht</div>
+            </div>
+
+            <div class="section-header">
+                <div class="section-icon">C</div>
+                <h2>Mittlerer Umkreis (20–35 km)</h2>
+                <span class="section-subtitle">Engelskirchen, Lindlar, Marienheide, Waldbr&ouml;l</span>
+            </div>
+
+            <!-- 16 -->
+            <div class="card" data-type="both">
+                <div class="rank">16</div>
+                <div class="card-body">
+                    <h3><a href="https://www.balzer-henn.de" target="_blank">Balzer + Henn Schreinerei</a></h3>
+                    <div class="card-meta">
+                        <span>Oberdorfstr. 19, 51766 Engelskirchen</span>
+                        <span>02263 / 952 337</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Fenster</span>
+                        <span class="tag">T&uuml;ren</span>
+                        <span class="tag">Treppen</span>
+                        <span class="tag">Einbruchschutz</span>
+                        <span class="tag">Meisterbetrieb</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~22 km</strong>Engelskirchen</div>
+            </div>
+
+            <!-- 17 -->
+            <div class="card" data-type="both">
+                <div class="rank">17</div>
+                <div class="card-body">
+                    <h3><a href="https://www.tischlerei-morten-schaefer.de" target="_blank">Tischlerei Morten Sch&auml;fer</a></h3>
+                    <div class="card-meta">
+                        <span>Rehbergstr. 63, 51709 Marienheide</span>
+                        <span>02264 / 2000 409</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Fenster</span>
+                        <span class="tag">Haust&uuml;ren</span>
+                        <span class="tag">Zimmert&uuml;ren</span>
+                        <span class="tag">M&ouml;bel</span>
+                        <span class="tag">PaX-Partner</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~20 km</strong>Marienheide</div>
+            </div>
+
+            <!-- 18 -->
+            <div class="card" data-type="fenster">
+                <div class="rank">18</div>
+                <div class="card-body">
+                    <h3><a href="https://www.schreiner-tischler.de/hueckeswagen/lars-osenberg" target="_blank">Tischlerei Lars Osenberg</a></h3>
+                    <div class="card-meta">
+                        <span>42499 H&uuml;ckeswagen</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Fenster</span>
+                        <span class="tag">T&uuml;ren</span>
+                        <span class="tag">K&uuml;chen</span>
+                        <span class="tag">Innenausbau</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~25 km</strong>H&uuml;ckeswagen</div>
+            </div>
+
+            <!-- 19 -->
+            <div class="card" data-type="both">
+                <div class="rank">19</div>
+                <div class="card-body">
+                    <h3>Fensterbauer Waldbr&ouml;l</h3>
+                    <div class="card-meta">
+                        <span>Sonnenwinkel 11, 51545 Waldbr&ouml;l</span>
+                        <span>02291 / 56 51</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Fenster</span>
+                        <span class="tag">T&uuml;ren</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~20 km</strong>Waldbr&ouml;l</div>
+            </div>
+
+            <!-- 20 -->
+            <div class="card" data-type="both">
+                <div class="rank">20</div>
+                <div class="card-body">
+                    <h3>Fensterbau Morsbach</h3>
+                    <div class="card-meta">
+                        <span>Oberwarnsbach 3d, 51597 Morsbach</span>
+                        <span>0160 / 91464193</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Fenster</span>
+                        <span class="tag">T&uuml;ren</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~25 km</strong>Morsbach</div>
+            </div>
+
+            <!-- 21 -->
+            <div class="card" data-type="both">
+                <div class="rank">21</div>
+                <div class="card-body">
+                    <h3>Fensterbau Windeck</h3>
+                    <div class="card-meta">
+                        <span>Im Thal 22, 51570 Windeck</span>
+                        <span>0176 / 21064941</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Fenster</span>
+                        <span class="tag">T&uuml;ren</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~30 km</strong>Windeck</div>
+            </div>
+
+            <!-- 22 -->
+            <div class="card" data-type="both">
+                <div class="rank">22</div>
+                <div class="card-body">
+                    <h3>Fensterbauer Reichshof (Heikausen)</h3>
+                    <div class="card-meta">
+                        <span>Am Gerstenfeld 4, 51580 Reichshof</span>
+                        <span>01511 / 2 48 30 25</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Fenster</span>
+                        <span class="tag">T&uuml;ren</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~12 km</strong>Reichshof</div>
+            </div>
+
+            <!-- 23 -->
+            <div class="card" data-type="both">
+                <div class="rank">23</div>
+                <div class="card-body">
+                    <h3>Fensterbauer Ruppichteroth</h3>
+                    <div class="card-meta">
+                        <span>Eitorfer Str. 4-12, 53809 Ruppichteroth</span>
+                        <span>02295 / 5095</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Fenster</span>
+                        <span class="tag">T&uuml;ren</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~28 km</strong>Ruppichteroth</div>
+            </div>
+
+            <!-- 24 -->
+            <div class="card" data-type="both">
+                <div class="rank">24</div>
+                <div class="card-body">
+                    <h3>Fensterbauer Ruppichteroth (Br&ouml;lstra&szlig;e)</h3>
+                    <div class="card-meta">
+                        <span>Br&ouml;lstra&szlig;e 8, 53809 Ruppichteroth</span>
+                        <span>02295 / 9090790</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Fenster</span>
+                        <span class="tag">T&uuml;ren</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~28 km</strong>Ruppichteroth</div>
+            </div>
+
+            <div class="section-header">
+                <div class="section-icon">D</div>
+                <h2>Erweiterter Umkreis (35–50 km)</h2>
+                <span class="section-subtitle">Overath, Lohmar, Hennef, Siegburg, Troisdorf</span>
+            </div>
+
+            <!-- 25 -->
+            <div class="card" data-type="both">
+                <div class="rank">25</div>
+                <div class="card-body">
+                    <h3><a href="https://degen-overath.de" target="_blank">Bauelemente Degen GmbH</a></h3>
+                    <div class="card-meta">
+                        <span>Durbuscher Str. 1A, 51491 Overath</span>
+                        <span>02206 / 868129</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">T&uuml;ren</span>
+                        <span class="tag">Fenster</span>
+                        <span class="tag">WERU-Partner</span>
+                        <span class="tag amber">5 J. Garantie</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~35 km</strong>Overath</div>
+            </div>
+
+            <!-- 26 -->
+            <div class="card" data-type="both">
+                <div class="rank">26</div>
+                <div class="card-body">
+                    <h3><a href="https://www.tischlerei-berg.de" target="_blank">Tischlerei Berg GmbH &amp; Co. KG</a></h3>
+                    <div class="card-meta">
+                        <span>Alte Ziegelei 21, 51491 Overath</span>
+                        <span>02204 / 767 595 0</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Fenster</span>
+                        <span class="tag">T&uuml;ren</span>
+                        <span class="tag">Denkmalschutz</span>
+                        <span class="tag amber">200+ Jahre Tradition</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~35 km</strong>Overath</div>
+            </div>
+
+            <!-- 27 -->
+            <div class="card" data-type="both">
+                <div class="rank">27</div>
+                <div class="card-body">
+                    <h3><a href="https://www.tischlerei-domgoergen.de" target="_blank">Tischlerei Domg&ouml;rgen</a></h3>
+                    <div class="card-meta">
+                        <span>Burghof 10, 51491 Overath</span>
+                        <span>02206 / 86 53 64</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Fenster</span>
+                        <span class="tag">T&uuml;ren</span>
+                        <span class="tag">Einbruchschutz</span>
+                        <span class="tag">K&uuml;chen</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~35 km</strong>Overath</div>
+            </div>
+
+            <!-- 28 -->
+            <div class="card" data-type="both">
+                <div class="rank">28</div>
+                <div class="card-body">
+                    <h3><a href="https://www.tischlerei-komp.de" target="_blank">Tischlerei Komp</a></h3>
+                    <div class="card-meta">
+                        <span>Dr.-Ringens-Str. 45a, 51491 Overath</span>
+                        <span>02206 / 908565</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Fenster</span>
+                        <span class="tag">Haust&uuml;ren</span>
+                        <span class="tag">Treppen</span>
+                        <span class="tag">Meisterbetrieb</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~35 km</strong>Overath</div>
+            </div>
+
+            <!-- 29 -->
+            <div class="card" data-type="both">
+                <div class="rank">29</div>
+                <div class="card-body">
+                    <h3><a href="https://www.glas-lehmann.de" target="_blank">Glas Lehmann GmbH</a></h3>
+                    <div class="card-meta">
+                        <span>Hauptstra&szlig;e 62, 51491 Overath / Im Spichgarten 4, 53797 Lohmar</span>
+                        <span>02206 / 4877</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Fenster</span>
+                        <span class="tag">T&uuml;ren</span>
+                        <span class="tag">Glaserei</span>
+                        <span class="tag">Notdienst 24/7</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~36 km</strong>Overath / Lohmar</div>
+            </div>
+
+            <!-- 30 -->
+            <div class="card" data-type="both">
+                <div class="rank">30</div>
+                <div class="card-body">
+                    <h3><a href="https://rolf-fensterbau.de" target="_blank">ROLF Fensterbau GmbH</a></h3>
+                    <div class="card-meta">
+                        <span>Irmenbitze 15, 53773 Hennef-Uckerath</span>
+                        <span>02248 / 9155-0</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Fenster</span>
+                        <span class="tag">Haust&uuml;ren</span>
+                        <span class="tag">Balkont&uuml;ren</span>
+                        <span class="tag amber">100+ Mitarbeiter</span>
+                        <span class="tag amber">Gr&ouml;&szlig;ter Hersteller K&ouml;ln-Bonn</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~38 km</strong>Hennef</div>
+            </div>
+
+            <!-- 31 -->
+            <div class="card" data-type="both">
+                <div class="rank">31</div>
+                <div class="card-body">
+                    <h3><a href="https://www.a-l-rolladen-fensterbauer.de" target="_blank">A. Liashkevich Rollladen &amp; Fensterbau</a></h3>
+                    <div class="card-meta">
+                        <span>Josefstra&szlig;e 15a, 53842 Troisdorf</span>
+                        <span>02241 / 3015626</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Fenster</span>
+                        <span class="tag">Rolll&auml;den</span>
+                        <span class="tag">Markisen</span>
+                        <span class="tag">Garagentore</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~42 km</strong>Troisdorf</div>
+            </div>
+
+            <!-- 32 -->
+            <div class="card" data-type="both">
+                <div class="rank">32</div>
+                <div class="card-body">
+                    <h3><a href="https://www.fensterbau-odenthal.de" target="_blank">Fensterbau Odenthal</a></h3>
+                    <div class="card-meta">
+                        <span>Witschgasse 9, 53844 Troisdorf</span>
+                        <span>0179 / 2232807 (auch WhatsApp)</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Fenster</span>
+                        <span class="tag">T&uuml;ren</span>
+                        <span class="tag">Meisterbetrieb</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~42 km</strong>Troisdorf</div>
+            </div>
+
+            <!-- 33 -->
+            <div class="card" data-type="both">
+                <div class="rank">33</div>
+                <div class="card-body">
+                    <h3><a href="https://koziol-bauelemente.de" target="_blank">Koziol Bauelemente</a></h3>
+                    <div class="card-meta">
+                        <span>Belgische Allee 55B, 53842 Troisdorf-Spich</span>
+                        <span>02241 / 8787999</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Haust&uuml;ren</span>
+                        <span class="tag">Fenster</span>
+                        <span class="tag">Schiebet&uuml;ren</span>
+                        <span class="tag">Tischlermeister</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~42 km</strong>Troisdorf</div>
+            </div>
+
+            <!-- 34 -->
+            <div class="card" data-type="both">
+                <div class="rank">34</div>
+                <div class="card-body">
+                    <h3><a href="https://www.clarvis-fenster.de" target="_blank">Clarvis GmbH</a></h3>
+                    <div class="card-meta">
+                        <span>Industriestra&szlig;e 8, 53842 Troisdorf</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Fenster</span>
+                        <span class="tag">Haust&uuml;ren</span>
+                        <span class="tag">Sicherheitst&uuml;ren</span>
+                        <span class="tag">Schiebeelemente</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~42 km</strong>Troisdorf</div>
+            </div>
+
+            <div class="section-header">
+                <div class="section-icon">E</div>
+                <h2>Gro&szlig;raum (50–70 km)</h2>
+                <span class="section-subtitle">K&ouml;ln, Leverkusen, Bergisch Gladbach, Bonn</span>
+            </div>
+
+            <!-- 35 -->
+            <div class="card" data-type="both">
+                <div class="rank">35</div>
+                <div class="card-body">
+                    <h3><a href="https://elsfen.de" target="_blank">Elsfen Bauelemente</a></h3>
+                    <div class="card-meta">
+                        <span>L&uuml;tzenkirchener Str. 3, 51379 Leverkusen</span>
+                        <span>0179 / 6784111</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Fenster</span>
+                        <span class="tag">T&uuml;ren</span>
+                        <span class="tag">Winterg&auml;rten</span>
+                        <span class="tag amber">Seit 1996</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~50 km</strong>Leverkusen</div>
+            </div>
+
+            <!-- 36 -->
+            <div class="card" data-type="both">
+                <div class="rank">36</div>
+                <div class="card-body">
+                    <h3><a href="https://www.fenster-boss.de" target="_blank">Fenster BOSS GmbH &amp; Co. KG</a></h3>
+                    <div class="card-meta">
+                        <span>Bergisch Gladbacher Str. 624, 51067 K&ouml;ln</span>
+                        <span>0221 / 29812626</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag">Fenster</span>
+                        <span class="tag">T&uuml;ren</span>
+                        <span class="tag">Beratung + Montage</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~55 km</strong>K&ouml;ln</div>
+            </div>
+
+            <!-- 37-50: Baumärkte + weitere -->
+            <div class="section-header">
+                <div class="section-icon">F</div>
+                <h2>Baum&auml;rkte &amp; Gro&szlig;h&auml;ndler</h2>
+                <span class="section-subtitle">Fenster &amp; T&uuml;ren ab Lager</span>
+            </div>
+
+            <div class="card" data-type="both">
+                <div class="rank">37</div>
+                <div class="card-body">
+                    <h3><a href="https://www.obi.de/markt/gummersbach" target="_blank">OBI Gummersbach</a></h3>
+                    <div class="card-meta">
+                        <span>Dieringhauser Str. 149, Gummersbach</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag blue">Baumarkt</span>
+                        <span class="tag">Fenster</span>
+                        <span class="tag">T&uuml;ren</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~12 km</strong>Gummersbach</div>
+            </div>
+
+            <div class="card" data-type="both">
+                <div class="rank">38</div>
+                <div class="card-body">
+                    <h3><a href="https://toom.de/m/gummersbach/" target="_blank">toom Baumarkt Gummersbach</a></h3>
+                    <div class="card-meta">
+                        <span>Vollmerhauser Str. 36, 51645 Gummersbach</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag blue">Baumarkt</span>
+                        <span class="tag">Fenster</span>
+                        <span class="tag">T&uuml;ren</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~12 km</strong>Gummersbach</div>
+            </div>
+
+            <div class="card" data-type="both">
+                <div class="rank">39</div>
+                <div class="card-body">
+                    <h3><a href="https://www.pax.de/fachhaendler/gummersbach" target="_blank">PaX Fachh&auml;ndler Gummersbach</a></h3>
+                    <div class="card-meta">
+                        <span>Verschiedene Partner im Oberbergischen</span>
+                    </div>
+                    <div class="card-services">
+                        <span class="tag blue">Hersteller</span>
+                        <span class="tag">Fenster</span>
+                        <span class="tag">Haust&uuml;ren</span>
+                    </div>
+                </div>
+                <div class="card-distance"><strong>~12 km</strong>Gummersbach</div>
+            </div>
+
+            <div class="section-header">
+                <div class="section-icon">G</div>
+                <h2>Weitere Anbieter in der Region</h2>
+            </div>
+
+            <div class="card" data-type="both">
+                <div class="rank">40</div>
+                <div class="card-body">
+                    <h3>Giesy Bau &mdash; Energetische Fenster &amp; T&uuml;ren</h3>
+                    <div class="card-meta"><span>Bergneustadt</span></div>
+                    <div class="card-services"><span class="tag">Fenster</span><span class="tag">T&uuml;ren</span><span class="tag">Energetisch</span></div>
+                </div>
+                <div class="card-distance"><strong>~15 km</strong></div>
+            </div>
+
+            <div class="card" data-type="fenster">
+                <div class="rank">41</div>
+                <div class="card-body">
+                    <h3><a href="https://fenster-rheydt.de/regio/wipperfuerth-hansestadt/" target="_blank">Fenster Rheydt &mdash; Filiale Wipperf&uuml;rth</a></h3>
+                    <div class="card-meta"><span>Wipperf&uuml;rth</span></div>
+                    <div class="card-services"><span class="tag">Fenster</span><span class="tag">Haust&uuml;ren</span><span class="tag">Sonnenschutz</span></div>
+                </div>
+                <div class="card-distance"><strong>~30 km</strong></div>
+            </div>
+
+            <div class="card" data-type="both">
+                <div class="rank">42</div>
+                <div class="card-body">
+                    <h3>Glaserei Frech</h3>
+                    <div class="card-meta"><span>Bergneustadt / Oberberg</span></div>
+                    <div class="card-services"><span class="tag">Glaserei</span><span class="tag">Fenster</span><span class="tag">Reparatur</span></div>
+                </div>
+                <div class="card-distance"><strong>~15 km</strong></div>
+            </div>
+
+            <div class="card" data-type="both">
+                <div class="rank">43</div>
+                <div class="card-body">
+                    <h3>Glaserei W&ouml;lz</h3>
+                    <div class="card-meta"><span>Gro&szlig;raum K&ouml;ln / Oberberg</span></div>
+                    <div class="card-services"><span class="tag">Glaserei</span><span class="tag">Fenster</span></div>
+                </div>
+                <div class="card-distance"><strong>~40 km</strong></div>
+            </div>
+
+            <div class="card" data-type="both">
+                <div class="rank">44</div>
+                <div class="card-body">
+                    <h3><a href="https://www.koeln-fensterbau.de" target="_blank">K&ouml;ln Fensterbau</a></h3>
+                    <div class="card-meta"><span>K&ouml;ln</span></div>
+                    <div class="card-services"><span class="tag">Fenster</span><span class="tag">T&uuml;ren</span><span class="tag">Beratung</span></div>
+                </div>
+                <div class="card-distance"><strong>~55 km</strong></div>
+            </div>
+
+            <div class="card" data-type="both">
+                <div class="rank">45</div>
+                <div class="card-body">
+                    <h3>Josef Kuhl (Inh. Norbert Kuhl) e.K.</h3>
+                    <div class="card-meta"><span>Odenthal</span></div>
+                    <div class="card-services"><span class="tag">Fenster</span><span class="tag">T&uuml;ren</span></div>
+                </div>
+                <div class="card-distance"><strong>~40 km</strong></div>
+            </div>
+
+            <div class="card" data-type="both">
+                <div class="rank">46</div>
+                <div class="card-body">
+                    <h3>Rohde &amp; Koziol GbR</h3>
+                    <div class="card-meta"><span>Belgische Allee 55B, 53842 Troisdorf</span></div>
+                    <div class="card-services"><span class="tag">Kunststofft&uuml;ren</span><span class="tag">Kunststofffenster</span></div>
+                </div>
+                <div class="card-distance"><strong>~42 km</strong></div>
+            </div>
+
+            <div class="card" data-type="both">
+                <div class="rank">47</div>
+                <div class="card-body">
+                    <h3>Fenster Eitorf</h3>
+                    <div class="card-meta"><span>Eitorf (Rhein-Sieg-Kreis)</span></div>
+                    <div class="card-services"><span class="tag">Fenster</span><span class="tag">T&uuml;ren</span></div>
+                </div>
+                <div class="card-distance"><strong>~35 km</strong></div>
+            </div>
+
+            <div class="card" data-type="both">
+                <div class="rank">48</div>
+                <div class="card-body">
+                    <h3>Meinfenster.de (ROLF Qualit&auml;t)</h3>
+                    <div class="card-meta"><span>Online + Hennef</span></div>
+                    <div class="card-services"><span class="tag">Fenster Online</span><span class="tag">Konfigurator</span></div>
+                </div>
+                <div class="card-distance"><strong>~38 km</strong></div>
+            </div>
+
+            <div class="card" data-type="both">
+                <div class="rank">49</div>
+                <div class="card-body">
+                    <h3>Hornbach (Online + Filialen)</h3>
+                    <div class="card-meta"><span>N&auml;chste Filiale: K&ouml;ln / Bonn</span></div>
+                    <div class="card-services"><span class="tag blue">Baumarkt</span><span class="tag">Fenster</span><span class="tag">T&uuml;ren</span></div>
+                </div>
+                <div class="card-distance"><strong>~55 km</strong></div>
+            </div>
+
+            <div class="card" data-type="both">
+                <div class="rank">50</div>
+                <div class="card-body">
+                    <h3>Bauhaus (Online + Filialen)</h3>
+                    <div class="card-meta"><span>N&auml;chste Filiale: K&ouml;ln / Bonn</span></div>
+                    <div class="card-services"><span class="tag blue">Baumarkt</span><span class="tag">Fenster</span><span class="tag">T&uuml;ren</span></div>
+                </div>
+                <div class="card-distance"><strong>~55 km</strong></div>
+            </div>
+
+        </div><!-- end tab-all -->
+
+        <div class="divider"></div>
+
+        <div class="info-box">
+            <p><strong>Tipp:</strong> F&uuml;r die beste Beratung immer 3 Angebote einholen. Die meisten Fachbetriebe kommen kostenlos zum Aufma&szlig; und zur Beratung vor Ort. Auf <a href="https://www.gelbeseiten.de/branchen/fensterbauer/wiehl" target="_blank">Gelbe Seiten</a> und <a href="https://www.my-hammer.de/fenster-tueren/tueren-fensterbauer-berufe/wiehl" target="_blank">MyHammer</a> findest du weitere Bewertungen.</p>
+        </div>
+
+        <div class="footer">
+            <p>Stand: Juni 2026 &mdash; Alle Angaben ohne Gew&auml;hr.</p>
+        </div>
+
+    </div>
+
+    <script>
+        function showTab(type) {
+            // Update tab buttons
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filter cards
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                if (type === 'all') {
+                    card.style.display = '';
+                } else {
+                    const cardType = card.getAttribute('data-type');
+                    if (type === 'both' && cardType === 'both') {
+                        card.style.display = '';
+                    } else if (type === 'fenster' && (cardType === 'fenster' || cardType === 'both')) {
+                        card.style.display = '';
+                    } else if (type === 'tueren' && (cardType === 'tueren' || cardType === 'both')) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
