@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Code — Einrichtungsanleitung</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0a;
+            color: #e4e4e7;
+            line-height: 1.7;
+            padding: 0 20px;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 60px 0 100px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .header .badge {
+            display: inline-block;
+            background: rgba(217, 119, 6, 0.15);
+            color: #f0b429;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 6px 16px;
+            border-radius: 100px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            font-size: 17px;
+            color: #a1a1aa;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Steps */
+        .step {
+            background: #18181b;
+            border: 1px solid #27272a;
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #f0b429, #d97706);
+            color: #0a0a0a;
+            font-weight: 700;
+            font-size: 15px;
+            border-radius: 10px;
+            margin-bottom: 16px;
+        }
+
+        .step h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+
+        .step p, .step li {
+            font-size: 15px;
+            color: #a1a1aa;
+        }
+
+        .step ul, .step ol {
+            padding-left: 20px;
+            margin-top: 8px;
+        }
+
+        .step li {
+            margin-bottom: 8px;
+        }
+
+        .step li strong {
+            color: #e4e4e7;
+        }
+
+        /* Code blocks */
+        pre {
+            background: #09090b;
+            border: 1px solid #27272a;
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin: 14px 0;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: 'SF Mono', 'Fira Code', 'JetBrains Mono', Consolas, monospace;
+            font-size: 14px;
+            color: #f0b429;
+        }
+
+        pre code {
+            color: #e4e4e7;
+        }
+
+        .cmd-prefix {
+            color: #f0b429;
+            user-select: none;
+        }
+
+        /* Inline code */
+        p code, li code {
+            background: rgba(240, 180, 41, 0.1);
+            padding: 2px 7px;
+            border-radius: 5px;
+            font-size: 13.5px;
+        }
+
+        /* Option cards */
+        .options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        @media (max-width: 560px) {
+            .options { grid-template-columns: 1fr; }
+        }
+
+        .option {
+            background: #09090b;
+            border: 1px solid #27272a;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .option.recommended {
+            border-color: rgba(240, 180, 41, 0.4);
+        }
+
+        .option h3 {
+            font-size: 15px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .option .tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            color: #f0b429;
+            background: rgba(240, 180, 41, 0.12);
+            padding: 2px 8px;
+            border-radius: 100px;
+            margin-bottom: 10px;
+        }
+
+        .option p, .option ol {
+            font-size: 13.5px;
+            color: #71717a;
+        }
+
+        .option ol {
+            padding-left: 16px;
+            margin-top: 6px;
+        }
+
+        .option li {
+            margin-bottom: 4px;
+            font-size: 13.5px;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 14px;
+        }
+
+        th {
+            text-align: left;
+            font-size: 12px;
+            font-weight: 600;
+            color: #71717a;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 10px 14px;
+            border-bottom: 1px solid #27272a;
+        }
+
+        td {
+            padding: 10px 14px;
+            font-size: 14px;
+            border-bottom: 1px solid #1c1c1e;
+        }
+
+        td:first-child code {
+            background: rgba(240, 180, 41, 0.1);
+            color: #f0b429;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+
+        /* Tip box */
+        .tip {
+            background: rgba(240, 180, 41, 0.06);
+            border-left: 3px solid #f0b429;
+            border-radius: 0 10px 10px 0;
+            padding: 16px 20px;
+            margin-top: 16px;
+        }
+
+        .tip-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: #f0b429;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .tip p {
+            font-size: 14px;
+            color: #a1a1aa;
+        }
+
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: #27272a;
+            margin: 40px 0;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            color: #52525b;
+            font-size: 13px;
+        }
+
+        .footer a {
+            color: #f0b429;
+            text-decoration: none;
+        }
+
+        /* Link styling */
+        a {
+            color: #f0b429;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Checklist */
+        .checklist {
+            list-style: none;
+            padding: 0;
+            margin-top: 12px;
+        }
+
+        .checklist li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 10px;
+        }
+
+        .checklist li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 18px;
+            height: 18px;
+            border: 2px solid #3f3f46;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- Header -->
+        <div class="header">
+            <div class="badge">Setup Guide</div>
+            <h1>Claude Code einrichten</h1>
+            <p>Schritt-f&uuml;r-Schritt Anleitung &mdash; von der Installation bis zum ersten Befehl. Dauert ca. 5 Minuten.</p>
+        </div>
+
+        <!-- Step 1 -->
+        <div class="step">
+            <div class="step-number">1</div>
+            <h2>Node.js installieren</h2>
+            <p>Claude Code l&auml;uft auf Node.js. Falls du es noch nicht hast, lade es hier herunter:</p>
+            <p style="margin-top: 12px;"><a href="https://nodejs.org" target="_blank">nodejs.org</a> &mdash; die <strong style="color:#fff;">LTS-Version</strong> w&auml;hlen (22.x oder h&ouml;her).</p>
+            <p style="margin-top: 12px;">Danach pr&uuml;fen, ob es geklappt hat:</p>
+            <pre><code><span class="cmd-prefix">$ </span>node --version</code></pre>
+            <p>Sollte <code>v18.x</code> oder h&ouml;her anzeigen.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step">
+            <div class="step-number">2</div>
+            <h2>Claude Code installieren</h2>
+            <p>&Ouml;ffne dein Terminal (PowerShell, CMD oder Git Bash) und f&uuml;hre aus:</p>
+            <pre><code><span class="cmd-prefix">$ </span>npm install -g @anthropic-ai/claude-code</code></pre>
+            <p>Das installiert Claude Code global auf deinem Rechner.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step">
+            <div class="step-number">3</div>
+            <h2>Claude zum ersten Mal starten</h2>
+            <pre><code><span class="cmd-prefix">$ </span>claude</code></pre>
+            <p>Beim ersten Start wirst du gefragt, wie du dich anmelden m&ouml;chtest. Es gibt zwei Optionen:</p>
+
+            <div class="options">
+                <div class="option recommended">
+                    <div class="tag">Empfohlen</div>
+                    <h3>Claude Max Abo</h3>
+                    <ol>
+                        <li>W&auml;hle <strong style="color:#fff;">"Log in with Claude account"</strong></li>
+                        <li>Browser &ouml;ffnet sich &mdash; einloggen</li>
+                        <li>Fertig! Alles l&auml;uft &uuml;ber dein Abo</li>
+                    </ol>
+                    <p style="margin-top: 8px; font-size: 12px;">Pro = $20/Monat (begrenzt)<br>Max = $100/Monat (empfohlen)</p>
+                </div>
+
+                <div class="option">
+                    <h3>API-Key</h3>
+                    <ol>
+                        <li>Gehe zu <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a></li>
+                        <li>Account erstellen + Guthaben aufladen</li>
+                        <li>Unter <strong style="color:#fff;">API Keys</strong> &rarr; neuen Key erstellen</li>
+                        <li>Key im Terminal eingeben</li>
+                    </ol>
+                    <p style="margin-top: 8px; font-size: 12px;">Pay-as-you-go &mdash; du zahlst pro Nutzung</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step">
+            <div class="step-number">4</div>
+            <h2>In deinem Projekt starten</h2>
+            <p>Navigiere in deinen Projektordner und starte Claude dort:</p>
+            <pre><code><span class="cmd-prefix">$ </span>cd /pfad/zu/deinem/projekt
+<span class="cmd-prefix">$ </span>claude</code></pre>
+            <p>Jetzt kannst du direkt lostippen. Ein paar Ideen:</p>
+            <ul style="margin-top: 10px;">
+                <li><code>Erkl&auml;re mir die Struktur dieses Projekts</code></li>
+                <li><code>Finde alle TODO-Kommentare im Code</code></li>
+                <li><code>Schreibe einen Test f&uuml;r die Login-Funktion</code></li>
+                <li><code>Behebe den Bug in der Datei app.js</code></li>
+            </ul>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="step">
+            <div class="step-number">5</div>
+            <h2>Wichtige Befehle</h2>
+            <p>Diese Befehle solltest du kennen:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Befehl</th>
+                        <th>Beschreibung</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>/help</code></td>
+                        <td>Hilfe anzeigen</td>
+                    </tr>
+                    <tr>
+                        <td><code>/clear</code></td>
+                        <td>Konversation zur&uuml;cksetzen</td>
+                    </tr>
+                    <tr>
+                        <td><code>/compact</code></td>
+                        <td>Kontext komprimieren (bei langen Sessions)</td>
+                    </tr>
+                    <tr>
+                        <td><code>Escape</code></td>
+                        <td>Aktuelle Aktion abbrechen</td>
+                    </tr>
+                    <tr>
+                        <td><code>Ctrl+C</code></td>
+                        <td>Claude beenden</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="step">
+            <div class="step-number">6</div>
+            <h2>Projekt konfigurieren <span style="color:#52525b; font-weight:400; font-size:14px;">(optional)</span></h2>
+            <p>Erstelle eine <code>CLAUDE.md</code> Datei im Projektordner. Claude liest sie automatisch bei jedem Start:</p>
+            <pre><code># Mein Projekt
+
+- Sprache: TypeScript
+- Tests mit: vitest
+- Vor jedem Commit: Tests laufen lassen
+- Alle Kommentare auf Deutsch</code></pre>
+            <p>So "kennt" Claude dein Projekt von Anfang an.</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Tips -->
+        <div class="step" style="border-color: rgba(240, 180, 41, 0.2);">
+            <h2 style="margin-bottom: 16px;">Tipps f&uuml;r den Alltag</h2>
+
+            <div class="tip">
+                <div class="tip-label">Git nutzen</div>
+                <p>Claude arbeitet am besten in einem Git-Repository. So kannst du &Auml;nderungen jederzeit r&uuml;ckg&auml;ngig machen mit <code>git diff</code> und <code>git checkout</code>.</p>
+            </div>
+
+            <div class="tip" style="margin-top: 12px;">
+                <div class="tip-label">Berechtigungen</div>
+                <p>Claude fragt vor jeder Datei&auml;nderung um Erlaubnis. Mit <code>/allowed-tools</code> kannst du Tools dauerhaft erlauben, damit es fl&uuml;ssiger l&auml;uft.</p>
+            </div>
+
+            <div class="tip" style="margin-top: 12px;">
+                <div class="tip-label">Denke laut</div>
+                <p>Je mehr Kontext du gibst, desto besser das Ergebnis. Statt "Fix den Bug" lieber: "Die Login-Seite zeigt einen 500 Error wenn das Passwort Sonderzeichen hat."</p>
+            </div>
+        </div>
+
+        <!-- Checklist -->
+        <div class="step">
+            <h2>Checkliste</h2>
+            <ul class="checklist">
+                <li>Node.js installiert (v18+)</li>
+                <li>Claude Code installiert (<code>npm i -g @anthropic-ai/claude-code</code>)</li>
+                <li><code>claude</code> gestartet und eingeloggt</li>
+                <li>In Projektordner navigiert</li>
+                <li>Ersten Befehl ausgef&uuml;hrt</li>
+            </ul>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Erstellt von <strong style="color: #a1a1aa;">Aura</strong> &mdash; bei Fragen einfach melden.</p>
+        </div>
+
+    </div>
+</body>
+</html>
