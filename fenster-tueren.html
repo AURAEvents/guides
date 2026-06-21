@@ -252,6 +252,381 @@
             .card-distance strong { display: inline; font-size: 14px; }
             .header h1 { font-size: 26px; }
             .tabs { overflow-x: auto; }
+            .price-grid { grid-template-columns: 1fr !important; }
+            .material-grid { grid-template-columns: 1fr !important; }
+            .season-grid { grid-template-columns: 1fr !important; }
+            .checklist-grid { grid-template-columns: 1fr !important; }
+        }
+
+        /* Navigation anchors */
+        .page-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 32px;
+        }
+
+        .page-nav a {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #f8faf8;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #475569;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .page-nav a:hover {
+            border-color: #22c55e;
+            color: #16a34a;
+            text-decoration: none;
+        }
+
+        /* Contact buttons */
+        .contact-btns {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .contact-btns a {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 5px 12px;
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.15s;
+        }
+
+        .btn-call {
+            background: rgba(22, 163, 74, 0.08);
+            color: #16a34a;
+        }
+
+        .btn-call:hover { background: rgba(22, 163, 74, 0.15); text-decoration: none; }
+
+        .btn-email {
+            background: rgba(59, 130, 246, 0.08);
+            color: #3b82f6;
+        }
+
+        .btn-email:hover { background: rgba(59, 130, 246, 0.15); text-decoration: none; }
+
+        .btn-web {
+            background: rgba(100, 116, 139, 0.08);
+            color: #64748b;
+        }
+
+        .btn-web:hover { background: rgba(100, 116, 139, 0.15); text-decoration: none; }
+
+        /* Price cards */
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .price-card {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .price-card h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 4px;
+        }
+
+        .price-card .price-range {
+            font-size: 22px;
+            font-weight: 700;
+            color: #16a34a;
+            margin: 8px 0 4px;
+        }
+
+        .price-card .price-unit {
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        .price-card .price-note {
+            font-size: 12px;
+            color: #64748b;
+            margin-top: 8px;
+        }
+
+        /* Material comparison table */
+        .material-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .material-card {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .material-card h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        .mat-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 13px;
+        }
+
+        .mat-row:last-child { border-bottom: none; }
+
+        .mat-label { color: #64748b; }
+        .mat-value { color: #0f172a; font-weight: 600; }
+
+        .bar-container {
+            width: 60px;
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #22c55e, #16a34a);
+            border-radius: 4px;
+        }
+
+        /* Funding box */
+        .funding-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        @media (max-width: 640px) {
+            .funding-grid { grid-template-columns: 1fr; }
+        }
+
+        .funding-card {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .funding-card h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 4px;
+        }
+
+        .funding-card .funding-amount {
+            font-size: 28px;
+            font-weight: 700;
+            color: #16a34a;
+            margin: 8px 0;
+        }
+
+        .funding-card ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 12px;
+        }
+
+        .funding-card li {
+            font-size: 13px;
+            color: #475569;
+            padding: 4px 0;
+            padding-left: 18px;
+            position: relative;
+        }
+
+        .funding-card li::before {
+            content: '\2713';
+            position: absolute;
+            left: 0;
+            color: #22c55e;
+            font-weight: 700;
+        }
+
+        /* Season cards */
+        .season-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .season-card {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .season-card.best { border-color: #22c55e; background: rgba(22,163,74,0.03); }
+
+        .season-card h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 6px;
+        }
+
+        .season-card .season-verdict {
+            font-size: 12px;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 100px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .verdict-best { background: rgba(22,163,74,0.1); color: #16a34a; }
+        .verdict-good { background: rgba(59,130,246,0.1); color: #3b82f6; }
+        .verdict-busy { background: rgba(245,158,11,0.1); color: #d97706; }
+        .verdict-ok { background: rgba(100,116,139,0.1); color: #64748b; }
+
+        .season-card p {
+            font-size: 12px;
+            color: #64748b;
+            margin-top: 6px;
+        }
+
+        /* Checklist */
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .check-group h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .check-group ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .check-group li {
+            font-size: 13px;
+            color: #475569;
+            padding: 5px 0 5px 22px;
+            position: relative;
+        }
+
+        .check-group li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 14px;
+            height: 14px;
+            border: 2px solid #cbd5e1;
+            border-radius: 4px;
+        }
+
+        /* Map container */
+        .map-container {
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            margin-top: 16px;
+        }
+
+        .map-container iframe {
+            display: block;
+            width: 100%;
+            height: 400px;
+            border: 0;
+        }
+
+        /* Angebots-Vorlage */
+        .template-box {
+            background: #f8faf8;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 24px;
+            margin-top: 16px;
+        }
+
+        .template-box pre {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 20px;
+            font-size: 13px;
+            line-height: 1.8;
+            white-space: pre-wrap;
+            color: #1e293b;
+            margin-top: 12px;
+        }
+
+        .template-box pre code {
+            color: #1e293b;
+        }
+
+        .btn-copy {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 12px;
+            font-family: inherit;
+            transition: opacity 0.15s;
+        }
+
+        .btn-copy:hover { opacity: 0.9; }
+
+        /* Cert badges for filter */
+        .cert-badge {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 4px;
+            background: rgba(22,163,74,0.1);
+            color: #16a34a;
+            margin-left: 6px;
+            vertical-align: middle;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
         }
 
         /* Links */
@@ -285,6 +660,20 @@
             <p><strong>Sortierung:</strong> Ranking basiert auf N&auml;he zu Drabenderh&ouml;he, Spezialisierung und Leistungsumfang. Entfernungen sind Sch&auml;tzwerte (Luftlinie). Alle Angaben ohne Gew&auml;hr &mdash; Stand Juni 2026.</p>
         </div>
 
+        <!-- Page Navigation -->
+        <div class="page-nav">
+            <a href="#anbieter">50 Anbieter</a>
+            <a href="#karte">Karte</a>
+            <a href="#preise">Preise</a>
+            <a href="#material">Materialvergleich</a>
+            <a href="#foerderung">F&ouml;rderung</a>
+            <a href="#checkliste">Checkliste</a>
+            <a href="#saison">Beste Jahreszeit</a>
+            <a href="#vorlage">Angebotsvorlage</a>
+        </div>
+
+        <div id="anbieter"></div>
+
         <div class="tabs">
             <button class="tab active" onclick="showTab('all')">Alle (50)</button>
             <button class="tab" onclick="showTab('fenster')">Fenster</button>
@@ -315,6 +704,11 @@
                         <span class="tag">T&uuml;ren</span>
                         <span class="tag">Winterg&auml;rten</span>
                     </div>
+                    <div class="contact-btns">
+                        <a href="tel:+49226178680" class="btn-call">Anrufen</a>
+                        <a href="mailto:info@loettgen-und-roesser.de" class="btn-email">E-Mail</a>
+                        <a href="https://www.loettgen-und-roesser.de" target="_blank" class="btn-web">Website</a>
+                    </div>
                 </div>
                 <div class="card-distance"><strong>~2 km</strong>Wiehl</div>
             </div>
@@ -334,6 +728,11 @@
                         <span class="tag">Rolll&auml;den</span>
                         <span class="tag">Smart Home</span>
                     </div>
+                    <div class="contact-btns">
+                        <a href="tel:+492261750085" class="btn-call">Anrufen</a>
+                        <a href="mailto:info@fenster-westermeier.de" class="btn-email">E-Mail</a>
+                        <a href="https://ic-westermeier.de" target="_blank" class="btn-web">Website</a>
+                    </div>
                 </div>
                 <div class="card-distance"><strong>~3 km</strong>Wiehl-Marienhagen</div>
             </div>
@@ -350,6 +749,11 @@
                     <div class="card-services">
                         <span class="tag">Fenster</span>
                         <span class="tag">Kunststofffenster</span>
+                    </div>
+                    <div class="contact-btns">
+                        <a href="tel:+492261790853" class="btn-call">Anrufen</a>
+                        <a href="mailto:linder@linder-rolf.de" class="btn-email">E-Mail</a>
+                        <a href="https://www.linder-rolf.de" target="_blank" class="btn-web">Website</a>
                     </div>
                 </div>
                 <div class="card-distance"><strong>~3 km</strong>Wiehl</div>
@@ -1154,6 +1558,332 @@
 
         </div><!-- end tab-all -->
 
+        <!-- ==================== KARTE ==================== -->
+        <div class="divider" id="karte"></div>
+
+        <div class="section-header">
+            <div class="section-icon">&#x1f4cd;</div>
+            <h2>Karte &mdash; Anbieter rund um Drabenderh&ouml;he</h2>
+        </div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d80000!2d7.55!3d50.95!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sde!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <p style="font-size:13px; color:#94a3b8; margin-top:8px; text-align:center;">Zentriert auf Drabenderh&ouml;he &mdash; <a href="https://www.google.com/maps/search/Fensterbauer+Drabenderh%C3%B6he" target="_blank">In Google Maps &ouml;ffnen</a></p>
+
+        <!-- ==================== PREISÜBERSICHT ==================== -->
+        <div class="divider" id="preise"></div>
+
+        <div class="section-header">
+            <div class="section-icon">&euro;</div>
+            <h2>Preis&uuml;bersicht 2026</h2>
+        </div>
+
+        <div class="step" style="margin-top:16px;">
+            <h3 style="font-size:16px; font-weight:600; color:#0f172a; margin-bottom:16px;">Fenster (Standardgr&ouml;&szlig;e 1,30 x 1,30 m, 3-fach Verglasung, inkl. Einbau)</h3>
+            <div class="price-grid">
+                <div class="price-card">
+                    <h4>Kunststoff</h4>
+                    <div class="price-range">500&ndash;850 &euro;</div>
+                    <div class="price-unit">pro Fenster</div>
+                    <div class="price-note">Bestes Preis-Leistungs-Verh&auml;ltnis</div>
+                </div>
+                <div class="price-card">
+                    <h4>Holz</h4>
+                    <div class="price-range">560&ndash;1.070 &euro;</div>
+                    <div class="price-unit">pro Fenster</div>
+                    <div class="price-note">Nat&uuml;rliche Optik, mehr Pflege</div>
+                </div>
+                <div class="price-card">
+                    <h4>Aluminium</h4>
+                    <div class="price-range">800&ndash;1.250 &euro;</div>
+                    <div class="price-unit">pro Fenster</div>
+                    <div class="price-note">Langlebig, schmal, modern</div>
+                </div>
+                <div class="price-card">
+                    <h4>Holz-Alu</h4>
+                    <div class="price-range">1.200&ndash;2.200 &euro;</div>
+                    <div class="price-unit">pro Fenster</div>
+                    <div class="price-note">Premium &mdash; Holz innen, Alu au&szlig;en</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3 style="font-size:16px; font-weight:600; color:#0f172a; margin-bottom:16px;">Haust&uuml;ren (inkl. Einbau &amp; Ausbau alt)</h3>
+            <div class="price-grid">
+                <div class="price-card">
+                    <h4>Kunststoff</h4>
+                    <div class="price-range">1.300&ndash;3.500 &euro;</div>
+                    <div class="price-unit">pro T&uuml;r</div>
+                    <div class="price-note">Einstieg: ab 500&euro; (Baumarkt)</div>
+                </div>
+                <div class="price-card">
+                    <h4>Holz</h4>
+                    <div class="price-range">2.500&ndash;4.000 &euro;</div>
+                    <div class="price-unit">pro T&uuml;r</div>
+                    <div class="price-note">Je nach Holzart</div>
+                </div>
+                <div class="price-card">
+                    <h4>Aluminium</h4>
+                    <div class="price-range">3.000&ndash;6.500 &euro;</div>
+                    <div class="price-unit">pro T&uuml;r</div>
+                    <div class="price-note">Bester Einbruchschutz</div>
+                </div>
+                <div class="price-card">
+                    <h4>Holz-Alu</h4>
+                    <div class="price-range">3.000&ndash;6.000 &euro;</div>
+                    <div class="price-unit">pro T&uuml;r</div>
+                    <div class="price-note">Premium-Segment</div>
+                </div>
+            </div>
+            <div class="info-box" style="margin-top:16px;">
+                <p><strong>Montagekosten extra:</strong> Einbau ~200&ndash;400 &euro;, Ausbau alte T&uuml;r ~100&ndash;200 &euro;. Preise steigen 2026 voraussichtlich um 5&ndash;7% gegen&uuml;ber Vorjahr.</p>
+            </div>
+        </div>
+
+        <!-- ==================== MATERIALVERGLEICH ==================== -->
+        <div class="divider" id="material"></div>
+
+        <div class="section-header">
+            <div class="section-icon">&#x2696;</div>
+            <h2>Materialvergleich &mdash; Fenster</h2>
+        </div>
+
+        <div class="material-grid" style="margin-top: 16px;">
+            <div class="material-card">
+                <h4>Kunststoff (PVC)</h4>
+                <div class="mat-row"><span class="mat-label">Preis</span><span class="mat-value"><span class="bar-container"><span class="bar-fill" style="width:30%"></span></span> &euro;&euro;</span></div>
+                <div class="mat-row"><span class="mat-label">D&auml;mmung</span><span class="mat-value"><span class="bar-container"><span class="bar-fill" style="width:75%"></span></span> Gut</span></div>
+                <div class="mat-row"><span class="mat-label">Pflege</span><span class="mat-value"><span class="bar-container"><span class="bar-fill" style="width:95%"></span></span> Minimal</span></div>
+                <div class="mat-row"><span class="mat-label">Lebensdauer</span><span class="mat-value">40&ndash;50 J.</span></div>
+                <div class="mat-row"><span class="mat-label">Optik</span><span class="mat-value">Schlicht</span></div>
+            </div>
+            <div class="material-card">
+                <h4>Holz</h4>
+                <div class="mat-row"><span class="mat-label">Preis</span><span class="mat-value"><span class="bar-container"><span class="bar-fill" style="width:50%"></span></span> &euro;&euro;&euro;</span></div>
+                <div class="mat-row"><span class="mat-label">D&auml;mmung</span><span class="mat-value"><span class="bar-container"><span class="bar-fill" style="width:85%"></span></span> Sehr gut</span></div>
+                <div class="mat-row"><span class="mat-label">Pflege</span><span class="mat-value"><span class="bar-container"><span class="bar-fill" style="width:35%"></span></span> Hoch</span></div>
+                <div class="mat-row"><span class="mat-label">Lebensdauer</span><span class="mat-value">50&ndash;60 J.</span></div>
+                <div class="mat-row"><span class="mat-label">Optik</span><span class="mat-value">Nat&uuml;rlich</span></div>
+            </div>
+            <div class="material-card">
+                <h4>Aluminium</h4>
+                <div class="mat-row"><span class="mat-label">Preis</span><span class="mat-value"><span class="bar-container"><span class="bar-fill" style="width:70%"></span></span> &euro;&euro;&euro;&euro;</span></div>
+                <div class="mat-row"><span class="mat-label">D&auml;mmung</span><span class="mat-value"><span class="bar-container"><span class="bar-fill" style="width:65%"></span></span> Gut*</span></div>
+                <div class="mat-row"><span class="mat-label">Pflege</span><span class="mat-value"><span class="bar-container"><span class="bar-fill" style="width:90%"></span></span> Minimal</span></div>
+                <div class="mat-row"><span class="mat-label">Lebensdauer</span><span class="mat-value">60+ J.</span></div>
+                <div class="mat-row"><span class="mat-label">Optik</span><span class="mat-value">Modern/Schmal</span></div>
+            </div>
+            <div class="material-card" style="border-color: rgba(22,163,74,0.3);">
+                <h4>Holz-Alu <span class="cert-badge">Premium</span></h4>
+                <div class="mat-row"><span class="mat-label">Preis</span><span class="mat-value"><span class="bar-container"><span class="bar-fill" style="width:90%"></span></span> &euro;&euro;&euro;&euro;&euro;</span></div>
+                <div class="mat-row"><span class="mat-label">D&auml;mmung</span><span class="mat-value"><span class="bar-container"><span class="bar-fill" style="width:95%"></span></span> Beste</span></div>
+                <div class="mat-row"><span class="mat-label">Pflege</span><span class="mat-value"><span class="bar-container"><span class="bar-fill" style="width:80%"></span></span> Gering</span></div>
+                <div class="mat-row"><span class="mat-label">Lebensdauer</span><span class="mat-value">60+ J.</span></div>
+                <div class="mat-row"><span class="mat-label">Optik</span><span class="mat-value">Best of Both</span></div>
+            </div>
+        </div>
+        <p style="font-size:12px; color:#94a3b8; margin-top:8px;">* Alu mit thermischer Trennung. Ohne Trennung deutlich schlechter.</p>
+
+        <!-- ==================== FÖRDERUNG ==================== -->
+        <div class="divider" id="foerderung"></div>
+
+        <div class="section-header">
+            <div class="section-icon">&#x1f4b0;</div>
+            <h2>F&ouml;rderung 2026 &mdash; BAFA &amp; KfW</h2>
+        </div>
+
+        <div class="funding-grid">
+            <div class="funding-card" style="border-color: rgba(22,163,74,0.3);">
+                <h4>BAFA &mdash; Einzelma&szlig;nahmen</h4>
+                <p style="font-size:13px; color:#64748b;">Geb&auml;udeh&uuml;lle (BEG EM)</p>
+                <div class="funding-amount">15&ndash;20% Zuschuss</div>
+                <ul>
+                    <li>15% Basis-F&ouml;rderung auf f&ouml;rderf&auml;hige Kosten</li>
+                    <li>+5% Bonus mit individuellem Sanierungsfahrplan (iSFP)</li>
+                    <li>Max. 30.000 &euro; f&ouml;rderf&auml;hig (60.000 &euro; mit iSFP)</li>
+                    <li>Fenster: Uw-Wert max. 0,95 W/(m&sup2;K)</li>
+                    <li>Haust&uuml;ren: Ud-Wert max. 1,3 W/(m&sup2;K)</li>
+                    <li>Antrag VOR Beginn der Ma&szlig;nahme!</li>
+                    <li>Energieberater erforderlich</li>
+                    <li>50% Zuschuss f&uuml;r Fachplanung/Baubegleitung</li>
+                </ul>
+            </div>
+            <div class="funding-card">
+                <h4>KfW 261 &mdash; Komplettsanierung</h4>
+                <p style="font-size:13px; color:#64748b;">Wohngeb&auml;ude-Kredit</p>
+                <div class="funding-amount">Bis 45% Tilgungszuschuss</div>
+                <ul>
+                    <li>Kredit bis 150.000 &euro; pro Wohneinheit</li>
+                    <li>Mindestens Effizienzhaus 85 oder Denkmal</li>
+                    <li>Fenster als Teil der Gesamtma&szlig;nahme</li>
+                    <li>Energieberater pflicht</li>
+                    <li>Kombinierbar mit anderen Ma&szlig;nahmen</li>
+                    <li>Ideal bei umfassender Sanierung</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="info-box" style="margin-top: 16px;">
+            <p><strong>Rechenbeispiel:</strong> 10 neue Fenster &agrave; 700 &euro; = 7.000 &euro; + 2.000 &euro; Montage = <strong>9.000 &euro;</strong>. Mit BAFA (20% iSFP): <strong>1.800 &euro; Zuschuss</strong> &rarr; Eigenanteil nur 7.200 &euro;. Mehr Infos: <a href="https://www.bafa.de/DE/Energie/Effiziente_Gebaeude/Sanierung_Wohngebaeude/Gebaeudehuelle/gebaeudehuelle_node.html" target="_blank">bafa.de</a></p>
+        </div>
+
+        <!-- ==================== CHECKLISTE ==================== -->
+        <div class="divider" id="checkliste"></div>
+
+        <div class="section-header">
+            <div class="section-icon">&#x2714;</div>
+            <h2>Checkliste &mdash; Vor dem Kauf</h2>
+        </div>
+
+        <div class="step" style="margin-top:16px;">
+            <div class="checklist-grid">
+                <div class="check-group">
+                    <h4>W&auml;rmed&auml;mmung (U-Wert)</h4>
+                    <ul>
+                        <li>Uw-Wert &le; 0,95 W/(m&sup2;K) f&uuml;r F&ouml;rderung</li>
+                        <li>3-fach Verglasung w&auml;hlen (Standard 2026)</li>
+                        <li>Warme Kante (Abstandhalter) beachten</li>
+                        <li>Passivhaus: Uw &le; 0,80 W/(m&sup2;K)</li>
+                    </ul>
+                </div>
+                <div class="check-group">
+                    <h4>Einbruchschutz (RC-Klasse)</h4>
+                    <ul>
+                        <li>RC 2 N reicht f&uuml;r Eigenheime (3 Min. Widerstand)</li>
+                        <li>RC 2 = h&ouml;here Sicherheit (empfohlen EG)</li>
+                        <li>RC 3 = gewerbl. / besonders gef&auml;hrdet</li>
+                        <li>Pilzkopfverriegelung &amp; Sicherheitsglas</li>
+                    </ul>
+                </div>
+                <div class="check-group">
+                    <h4>Schallschutz (SSK)</h4>
+                    <ul>
+                        <li>SSK 1: 25&ndash;29 dB (ruhige Lage)</li>
+                        <li>SSK 2: 30&ndash;34 dB (Wohnstra&szlig;e)</li>
+                        <li>SSK 3: 35&ndash;39 dB (Hauptstra&szlig;e)</li>
+                        <li>SSK 4: 40&ndash;44 dB (Verkehrsreiche Stra&szlig;e)</li>
+                        <li>SSK 5/6: 45&ndash;50+ dB (Flughafen/Autobahn)</li>
+                    </ul>
+                </div>
+                <div class="check-group">
+                    <h4>Montage &amp; Qualit&auml;t</h4>
+                    <ul>
+                        <li>RAL-Montage verlangen (Qualit&auml;tsstandard)</li>
+                        <li>3 Angebote einholen und vergleichen</li>
+                        <li>Garantie pr&uuml;fen (min. 5 Jahre)</li>
+                        <li>Referenzen / Google-Bewertungen lesen</li>
+                        <li>Baubegleitung buchen (50% BAFA-Zuschuss!)</li>
+                        <li>F&ouml;rderantrag VOR Beauftragung stellen</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== SAISON ==================== -->
+        <div class="divider" id="saison"></div>
+
+        <div class="section-header">
+            <div class="section-icon">&#x1f4c5;</div>
+            <h2>Beste Jahreszeit zum Bestellen</h2>
+        </div>
+
+        <div class="season-grid" style="margin-top:16px;">
+            <div class="season-card best">
+                <h4>Winter</h4>
+                <span class="season-verdict verdict-best">Beste Zeit</span>
+                <p>K&uuml;rzeste Wartezeiten, oft 2&ndash;3 Wochen schneller. Viele Betriebe geben Rabatte in der Nebensaison.</p>
+            </div>
+            <div class="season-card">
+                <h4>Fr&uuml;hling</h4>
+                <span class="season-verdict verdict-busy">Hochsaison</span>
+                <p>Hohe Nachfrage, l&auml;ngere Wartezeiten. Fr&uuml;h bestellen! Ideal f&uuml;r Einbau im Sommer.</p>
+            </div>
+            <div class="season-card">
+                <h4>Sommer</h4>
+                <span class="season-verdict verdict-good">Guter Einbau</span>
+                <p>Gutes Wetter f&uuml;r Montage. Aber: Im Fr&uuml;hling bestellen &mdash; 6&ndash;10 Wochen Vorlauf.</p>
+            </div>
+            <div class="season-card">
+                <h4>Herbst</h4>
+                <span class="season-verdict verdict-busy">Hochsaison</span>
+                <p>Zweite Hochsaison. Viele wollen vor dem Winter fertig werden. Fr&uuml;h planen!</p>
+            </div>
+        </div>
+
+        <div class="step" style="margin-top: 16px;">
+            <h3 style="font-size:16px; font-weight:600; color:#0f172a; margin-bottom:12px;">Lieferzeiten nach Material (2026)</h3>
+            <table>
+                <thead>
+                    <tr><th>Material</th><th>Lieferzeit</th><th>Tipp</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Kunststoff</td><td><strong style="color:#16a34a">2&ndash;8 Wochen</strong></td><td>Schnellste Option</td></tr>
+                    <tr><td>Aluminium</td><td><strong style="color:#d97706">6&ndash;12 Wochen</strong></td><td>Fr&uuml;h bestellen</td></tr>
+                    <tr><td>Holz</td><td><strong style="color:#d97706">10&ndash;16 Wochen</strong></td><td>Vorlauf einplanen</td></tr>
+                    <tr><td>Holz-Alu</td><td><strong style="color:#ef4444">12&ndash;16 Wochen</strong></td><td>Min. 4 Monate Vorlauf</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ==================== ANGEBOTSVORLAGE ==================== -->
+        <div class="divider" id="vorlage"></div>
+
+        <div class="section-header">
+            <div class="section-icon">&#x1f4dd;</div>
+            <h2>Angebotsvorlage &mdash; Kopieren &amp; Senden</h2>
+        </div>
+        <p style="font-size:14px; color:#64748b; margin-top:8px;">Diese Vorlage an 3 Anbieter schicken, um vergleichbare Angebote zu bekommen:</p>
+
+        <div class="template-box">
+            <pre id="template-text"><code>Betreff: Angebotsanfrage Fenster / T&uuml;ren &mdash; [Ihr Name]
+
+Sehr geehrte Damen und Herren,
+
+ich plane den Austausch von Fenstern/T&uuml;ren an meinem Objekt und bitte um ein
+unverbindliches Angebot inkl. Aufma&szlig;, Lieferung, Montage und Entsorgung.
+
+OBJEKT:
+&bull; Adresse: [Stra&szlig;e, PLZ Ort]
+&bull; Baujahr: [z.B. 1985]
+&bull; Geb&auml;udetyp: [EFH / MFH / Gewerbe]
+
+FENSTER (Anzahl: ___):
+&bull; Gr&ouml;&szlig;e(n): [z.B. 1,30 x 1,30 m, 1,00 x 1,20 m]
+&bull; Material: [Kunststoff / Holz / Alu / Holz-Alu]
+&bull; Verglasung: 3-fach (Uw &le; 0,95 f&uuml;r F&ouml;rderung)
+&bull; Schallschutz: [SSK 2/3/4]
+&bull; Einbruchschutz: [RC 2 N / RC 2]
+&bull; Farbe: [Wei&szlig; / Anthrazit / Sonstige]
+&bull; Rolll&auml;den: [Ja / Nein]
+
+HAUST&Uuml;R (Anzahl: ___):
+&bull; Ma&szlig;e: [z.B. 1,10 x 2,10 m]
+&bull; Material: [Kunststoff / Holz / Alu]
+&bull; Einbruchschutz: [RC 2 / RC 3]
+&bull; Ud-Wert: &le; 1,3 W/(m&sup2;K) f&uuml;r F&ouml;rderung
+
+SONSTIGES:
+&bull; Gew&uuml;nschter Einbautermin: [z.B. September 2026]
+&bull; F&ouml;rderung: BAFA BEG EM geplant &mdash; bitte f&ouml;rderf&auml;hige Produkte anbieten
+&bull; RAL-Montage gew&uuml;nscht: [Ja / Nein]
+
+Bitte gliedern Sie das Angebot nach:
+1. Material + Fenster/T&uuml;r-Kosten (je St&uuml;ck)
+2. Montagekosten
+3. Demontage + Entsorgung
+4. Sonderleistungen (Rolll&auml;den, Fensterbänke, etc.)
+
+Vielen Dank f&uuml;r Ihre M&uuml;he!
+
+Mit freundlichen Gr&uuml;&szlig;en,
+[Ihr Name]
+[Telefon]
+[E-Mail]</code></pre>
+            <button class="btn-copy" onclick="copyTemplate()">Vorlage kopieren</button>
+        </div>
+
+        <!-- ==================== TIPP ==================== -->
         <div class="divider"></div>
 
         <div class="info-box">
@@ -1162,17 +1892,15 @@
 
         <div class="footer">
             <p>Stand: Juni 2026 &mdash; Alle Angaben ohne Gew&auml;hr.</p>
+            <p style="margin-top:8px;">Quellen: <a href="https://www.bafa.de/DE/Energie/Effiziente_Gebaeude/Sanierung_Wohngebaeude/Gebaeudehuelle/gebaeudehuelle_node.html" target="_blank">BAFA</a> &middot; <a href="https://www.kfw.de/inlandsfoerderung/Privatpersonen/Bestandsimmobilie/Energieeffizient-Sanieren/Fenster/" target="_blank">KfW</a> &middot; <a href="https://www.aroundhome.de/fenster/preise-preisvergleich/" target="_blank">Aroundhome</a> &middot; <a href="https://www.gelbeseiten.de/branchen/fensterbauer/wiehl" target="_blank">Gelbe Seiten</a></p>
         </div>
 
     </div>
 
     <script>
         function showTab(type) {
-            // Update tab buttons
             document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
             event.target.classList.add('active');
-
-            // Filter cards
             const cards = document.querySelectorAll('.card');
             cards.forEach(card => {
                 if (type === 'all') {
@@ -1189,6 +1917,15 @@
                         card.style.display = 'none';
                     }
                 }
+            });
+        }
+
+        function copyTemplate() {
+            const text = document.getElementById('template-text').innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = document.querySelector('.btn-copy');
+                btn.textContent = 'Kopiert!';
+                setTimeout(() => { btn.textContent = 'Vorlage kopieren'; }, 2000);
             });
         }
     </script>
